@@ -5,6 +5,7 @@
 # Raspberry Pi zero2 セットアップ
 OS:Raspberry Pi OS Bullseye 64bit lite
 
+```
 $ lsb_release -a
 No LSB modules are available.
 Distributor ID: Debian
@@ -14,8 +15,15 @@ Codename:       bullseye
 
 $ getconf LONG_BIT
 64
+```
 
+## USB SSH 有効化
 
+config.txtに追記
+dtoverlay=dwc2
+
+commandline.txtのrootwait とquietの間に[]の中を追記
+rootwait [modules-load=dwc2,g_ether] quiet
 
 USB SSH化推奨
 apt update,upgrade
@@ -31,6 +39,7 @@ sudo apt -y install python3-pip
 ```
 
 picamera2
+https://picamera.readthedocs.io/en/release-1.13/fov.html
 opencv-pythonをインストール
 ```sh
 pip3 install picamera2
