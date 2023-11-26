@@ -26,6 +26,36 @@ commandline.txtのrootwait とquietの間に[]の中を追記
 rootwait [modules-load=dwc2,g_ether] quiet
 
 USB SSH化推奨
+## swap無効、
+
+swap確認
+```
+swapon -s
+```
+swap領域をゼロに変更
+```
+sudo vim /etc/dphys-swapfile
+```
+```
+CONF_SWAPSIZE=0
+```
+
+もしくは   
+スワップを無効化   
+```
+sudo systemctl stop dphys-swapfile
+sudo systemctl disable dphys-swapfile
+```
+確認
+```
+sudo systemctl status dphys-swapfile
+```
+
+## /tmpのRAM化
+
+
+
+## 必要ソフトインストール
 apt update,upgrade
 ```sh
 sudo apt update && sudo apt upgrade -y
