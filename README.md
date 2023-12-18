@@ -49,11 +49,20 @@ sudo systemctl disable dphys-swapfile
 確認
 ```
 sudo systemctl status dphys-swapfile
+free -h
 ```
 
 ## /tmpのRAM化
-
-
+```
+sudo nano /etc/fstab
+```
+以下の行を追加
+```
+tmpfs /tmp tmpfs defaults,size=64m,noatime,mode=1777 0 0
+```
+```
+sudo rm -rf /tmp
+```
 
 ## 必要ソフトインストール
 apt update,upgrade
