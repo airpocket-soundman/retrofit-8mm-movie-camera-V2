@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "8mm_BH172_v1.0.0-rescue")(type "KiCad")(uri "${KIPRJMOD}/8mm_BH172_v1.0.0-rescue.kicad_sym")(options "")(descr ""))
+)
